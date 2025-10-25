@@ -120,7 +120,7 @@ export default function HomePage() {
         { name: "Keras", level: 82 },
         { name: "CNN", level: 88 },
         { name: "RNN", level: 80 },
-        { name: "Deep Learning", level: 85 },
+        { name: "NLP", level: 85 },
       ],
     },
     {
@@ -131,7 +131,7 @@ export default function HomePage() {
         { name: "Matplotlib", level: 90 },
         { name: "Seaborn", level: 85 },
         { name: "Data Analysis", level: 88 },
-        { name: "Visualization", level: 80 },
+        { name: "Exploratory Data Analysis", level: 87 },
       ],
     },
     {
@@ -154,7 +154,7 @@ export default function HomePage() {
       description: "A full-stack bike rental application with React frontend and Flask API backend",
       longDescription:
         "A comprehensive bike rental platform featuring user authentication, bike booking system, payment integration, and admin dashboard. The frontend is built with React and deployed on Vercel, while the Flask API backend is deployed on Render. Features include real-time booking, user management, and responsive design.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop&crop=center",
       technologies: ["React", "Flask", "JavaScript", "CSS", "HTML"],
       github: "https://github.com/AryanChoudhary930-cmyk/bike_frontend",
       demo: "https://bikefrontend-rosy.vercel.app/",
@@ -166,7 +166,7 @@ export default function HomePage() {
       description: "AI-powered object detection system using YOLOv8 and OpenCV",
       longDescription:
         "A real-time object detection application built with Python, OpenCV, and YOLOv8, deployed using Streamlit. This app detects and tracks multiple objects directly from a live webcam feed, displaying bounding boxes, class labels, and confidence scores in real-time. Features interactive UI and high-performance detection capabilities.",
-      image: "/placeholder.svg",
+      image: "https://via.placeholder.com/400x300/667eea/ffffff?text=AI+Object+Detection",
       technologies: ["Python", "OpenCV", "YOLOv8", "Streamlit", "Ultralytics"],
       github: "https://github.com/AryanChoudhary930-cmyk/Real-time-object-detection-app",
       category: "AI/ML",
@@ -177,7 +177,7 @@ export default function HomePage() {
       description: "Intelligent movie recommendation engine using machine learning",
       longDescription:
         "A sophisticated movie recommendation system that suggests personalized movie choices based on user preferences and viewing history. Built with Python and deployed on Streamlit, it uses advanced machine learning algorithms to provide accurate recommendations. Features include similarity-based recommendations and an intuitive user interface.",
-      image: "/placeholder.svg",
+      image: "https://via.placeholder.com/400x300/f093fb/ffffff?text=Movie+Recommendations",
       technologies: ["Python", "Machine Learning", "Streamlit", "Pandas", "NumPy"],
       github: "https://github.com/AryanChoudhary930-cmyk/movies-recommendation_DataScience",
       demo: "https://movies-recommendationdatascience-35bcuxcfzzar4zffdy3p3o.streamlit.app/",
@@ -189,7 +189,7 @@ export default function HomePage() {
       description: "AI-powered medical diagnosis tool for chest X-ray analysis",
       longDescription:
         "A web application powered by AI that identifies pneumonia from chest X-rays based on a deep learning CNN model. Users can upload X-ray images and receive instant predictions (Normal or Pneumonia). Developed with Python and Streamlit, the application presents an easy-to-use interface with real-time feedback. Trained on the Kaggle pneumonia dataset for high accuracy.",
-      image: "/placeholder.svg",
+      image: "https://via.placeholder.com/400x300/4ade80/ffffff?text=Pneumonia+Detection",
       technologies: ["Python", "Deep Learning", "CNN", "Keras", "Streamlit", "Medical AI"],
       github: "https://github.com/AryanChoudhary930-cmyk/Pneumonia-detection-app",
       category: "AI/ML",
@@ -274,17 +274,17 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-16">
+        <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-16">
           <div className="text-center max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center"
             >
               <div className="order-2 md:order-1">
                 <motion.h1
-                  className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -293,7 +293,7 @@ export default function HomePage() {
                 </motion.h1>
 
                 <motion.p
-                  className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4"
+                  className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-3 sm:mb-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -302,7 +302,7 @@ export default function HomePage() {
                 </motion.p>
 
                 <motion.p
-                  className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto"
+                  className="text-base sm:text-lg text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 max-w-xl mx-auto px-4 sm:px-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -311,14 +311,14 @@ export default function HomePage() {
                 </motion.p>
 
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4 sm:px-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
                   <button
                     onClick={() => scrollToSection("projects")}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                   >
                     View My Work
                   </button>
@@ -326,15 +326,15 @@ export default function HomePage() {
                     href="https://wa.me/918319359979"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+                    className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                   >
-                    <MessageCircle size={20} />
+                    <MessageCircle size={18} className="sm:w-5 sm:h-5" />
                     <span>WhatsApp Me</span>
                   </a>
                 </motion.div>
 
                 <motion.div
-                  className="flex justify-center space-x-6"
+                  className="flex justify-center space-x-4 sm:space-x-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1 }}
@@ -405,7 +405,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen py-20 px-4">
+      <section id="about" className="min-h-screen py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             ref={aboutRef}
@@ -465,7 +465,7 @@ export default function HomePage() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-gray-900">
+      <section id="skills" className="min-h-screen py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -473,7 +473,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Skills</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Skills</h1>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               A comprehensive overview of my technical expertise and proficiency levels
@@ -485,7 +485,7 @@ export default function HomePage() {
             variants={containerVariants}
             initial="hidden"
             animate={skillsInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
           >
             {skills.map((skillCategory, categoryIndex) => (
               <motion.div
@@ -583,7 +583,7 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="min-h-screen py-20 px-4">
+      <section id="projects" className="min-h-screen py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -591,7 +591,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h1>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               A showcase of my recent work and personal projects
@@ -603,7 +603,7 @@ export default function HomePage() {
             variants={containerVariants}
             initial="hidden"
             animate={projectsInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             {projects.map((project, index) => (
               <motion.div
@@ -757,7 +757,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-gray-900">
+      <section id="contact" className="min-h-screen py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -765,7 +765,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h1>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               I'd love to hear from you. Send me a message and I'll respond as soon as possible.
@@ -777,7 +777,7 @@ export default function HomePage() {
             variants={containerVariants}
             initial="hidden"
             animate={contactInView ? "visible" : "hidden"}
-            className="grid lg:grid-cols-2 gap-12"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
           >
             {/* Contact Information */}
             <motion.div variants={itemVariants} className="space-y-8">
@@ -877,7 +877,7 @@ export default function HomePage() {
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Name
