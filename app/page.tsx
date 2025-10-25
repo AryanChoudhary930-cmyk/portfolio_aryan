@@ -100,45 +100,49 @@ export default function HomePage() {
 
   const skills = [
     {
-      category: "Frontend",
-      icon: <Globe className="w-8 h-8" />,
+      category: "Core ML & Data",
+      icon: <Brain className="w-8 h-8" />,
       color: "from-blue-500 to-cyan-500",
       items: [
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 92 },
-        { name: "React", level: 88 },
-        { name: "WordPress", level: 85 },
+        { name: "Python", level: 95 },
+        { name: "Pandas", level: 90 },
+        { name: "NumPy", level: 92 },
+        { name: "Scikit-learn", level: 88 },
+        { name: "Machine Learning", level: 85 },
       ],
     },
     {
-      category: "Backend",
-      icon: <Server className="w-8 h-8" />,
+      category: "Deep Learning",
+      icon: <Database className="w-8 h-8" />,
       color: "from-green-500 to-emerald-500",
       items: [
-        { name: "MongoDB", level: 85 },
-        { name: "C", level: 80 },
-        { name: "C++", level: 82 },
+        { name: "TensorFlow", level: 85 },
+        { name: "Keras", level: 82 },
+        { name: "CNN", level: 88 },
+        { name: "RNN", level: 80 },
+        { name: "Deep Learning", level: 85 },
       ],
     },
     {
-      category: "Data Science",
-      icon: <Database className="w-8 h-8" />,
+      category: "Data Visualization",
+      icon: <MessageCircle className="w-8 h-8" />,
       color: "from-purple-500 to-pink-500",
       items: [
-        { name: "Python", level: 90 },
-        { name: "Pandas", level: 85 },
-        { name: "NumPy", level: 88 },
-        { name: "Matplotlib", level: 80 },
+        { name: "Matplotlib", level: 90 },
+        { name: "Seaborn", level: 85 },
+        { name: "Data Analysis", level: 88 },
+        { name: "Visualization", level: 80 },
       ],
     },
     {
-      category: "AI & ML",
-      icon: <Brain className="w-8 h-8" />,
+      category: "NLP & Deployment",
+      icon: <Server className="w-8 h-8" />,
       color: "from-orange-500 to-red-500",
       items: [
-        { name: "Machine Learning", level: 85 },
-        { name: "AI Development", level: 82 },
+        { name: "NLP", level: 85 },
+        { name: "MLflow", level: 82 },
+        { name: "Docker", level: 80 },
+        { name: "CI/CD", level: 85 },
       ],
     },
   ]
@@ -294,7 +298,7 @@ export default function HomePage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  Full Stack Developer & AI Enthusiast
+                  Machine Learning Engineer & AI Enthusiast
                 </motion.p>
 
                 <motion.p
@@ -303,7 +307,7 @@ export default function HomePage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  "Passionate about merging front-end elegance with back-end power and smart algorithms."
+                  "Passionate about building intelligent systems and solving complex problems with machine learning and deep learning algorithms."
                 </motion.p>
 
                 <motion.div
@@ -445,15 +449,15 @@ export default function HomePage() {
               ></motion.div>
 
               <motion.p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed" variants={itemVariants}>
-                I'm a passionate full-stack developer with a strong background in modern web technologies and artificial
-                intelligence. With expertise in React, and machine learning, I create innovative solutions that
-                bridge the gap between cutting-edge technology and user-friendly experiences.
+                I'm a passionate machine learning engineer and AI enthusiast with a strong background in core ML algorithms,
+                deep learning, and natural language processing. With expertise in Python, TensorFlow, PyTorch, and advanced
+                AI techniques, I create intelligent solutions that solve real-world problems through data-driven insights.
               </motion.p>
 
               <motion.p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed" variants={itemVariants}>
-                My journey in tech started with a curiosity about how things work, which led me to explore everything
-                from frontend frameworks to AI algorithms. I believe in continuous learning and staying updated with the
-                latest industry trends.
+                My journey in AI/ML started with a fascination for how machines can learn and make decisions, which led me to
+                explore everything from classical machine learning algorithms to cutting-edge deep learning architectures.
+                I believe in continuous learning and staying updated with the latest advances in artificial intelligence.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -534,19 +538,24 @@ export default function HomePage() {
 
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                "React",
-                "JavaScript",
-                "HTML5",
-                "CSS3",
-                "C++",
-                "WordPress",
                 "Python",
-                "NumPy",
                 "Pandas",
+                "NumPy",
                 "Matplotlib",
+                "Seaborn",
+                "Scikit-learn",
                 "Machine Learning",
-                "Deep learning",
-                "AI",
+                "TensorFlow",
+                "Keras",
+                "CNN",
+                "NLP",
+                "RNN",
+                "Deep Learning",
+                "MLflow",
+                "Docker",
+                "CI/CD",
+                "Automation",
+                "Deployment",
               ].map((tech, index) => (
                 <motion.div
                   key={index}
