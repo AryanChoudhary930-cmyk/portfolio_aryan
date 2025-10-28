@@ -340,7 +340,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, delay: 1 }}
                 >
                   <motion.a
-                    href="https://github.com/aryanrdx01"
+                    href="https://github.com/AryanChoudhary930-cmyk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -350,7 +350,7 @@ export default function HomePage() {
                     <Github size={24} />
                   </motion.a>
                   <motion.a
-                    href="https://www.linkedin.com/in/aryan-choudhary-485465230/"
+                    href="https://www.linkedin.com/in/aryan-choudhary-"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -548,7 +548,6 @@ export default function HomePage() {
                 "TensorFlow",
                 "Keras",
                 "CNN",
-                "NLP",
                 "RNN",
                 "Deep Learning",
                 "MLflow",
@@ -694,7 +693,8 @@ export default function HomePage() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
-                  <Image
+                  
+                <Image
                     src={selectedProject.image || "https://via.placeholder.com/600x400/1f2937/ffffff?text=Project+Image"}
                     alt={selectedProject.title}
                     width={600}
@@ -851,7 +851,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Me</h3>
                 <div className="flex space-x-4">
                   <motion.a
-                    href="https://github.com/aryanrdx01"
+                    href="https://github.com/AryanChoudhary930-cmyk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
@@ -861,7 +861,7 @@ export default function HomePage() {
                     <Github size={24} />
                   </motion.a>
                   <motion.a
-                    href="https://www.linkedin.com/in/aryan-choudhary-485465230/"
+                    href="https://www.linkedin.com/in/aryan-choudhary-"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
