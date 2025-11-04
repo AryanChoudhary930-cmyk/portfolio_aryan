@@ -1,25 +1,26 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Github, ExternalLink, X } from "lucide-react"
 
+interface Project {
+  id: number
+  title: string
+  description: string
+  longDescription: string
+  technologies: string[]
+  github: string
+  demo?: string
+  category: string
+}
+
 export default function ProjectsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-
-  interface Project {
-    id: number;
-    title: string;
-    description: string;
-    longDescription: string;
-    technologies: string[];
-    github: string;
-    demo: string;
-    category: string;
-  }
+  const [selectedProject, setSelectedProject] = useState(null as Project | null)
 
   const projects: Project[] = [
     {
@@ -123,15 +124,16 @@ export default function ProjectsPage() {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A showcase of my recent work and personal projects
           </p>
+        </motion.div>
 
-          <motion.div
-            ref={ref}
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 no-image"
-          >
-          {projects.map((project, index) => (
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 no-image"
+        >
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={cardVariants}
@@ -194,76 +196,76 @@ export default function ProjectsPage() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
 
-      {/* Project Modal */}
-      {selectedProject && (
-        <motion.div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedProject(null)}
-        >
+        {/* Project Modal */}
+        {selectedProject && (
           <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProject(null)}
           >
-            <div className="relative">
-              <div className="h-64 bg-gray-100 dark:bg-gray-700 rounded-t-xl"></div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg"
-              >
-                <X size={20} />
-              </button>
-            </div>
+            <motion.div
+              className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative">
+                <div className="h-64 bg-gray-100 dark:bg-gray-700 rounded-t-xl"></div>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg"
+                >
+                  <X size={20} />
+                </button>
+              </div>
 
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{selectedProject.title}</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">{selectedProject.longDescription}</p>
+              <div className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{selectedProject.title}</h2>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">{selectedProject.longDescription}</p>
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-gray-900 dark:bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+                  >
+                    <Github size={20} className="mr-2" />
+                    View Code
+                  </a>
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    <ExternalLink size={20} className="mr-2" />
+                    Live Demo
+                  </a>
                 </div>
               </div>
-
-              <div className="flex space-x-4">
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-gray-900 dark:bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
-                >
-                  <Github size={20} className="mr-2" />
-                  View Code
-                </a>
-                <a
-                  href={selectedProject.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  <ExternalLink size={20} className="mr-2" />
-                  Live Demo
-                </a>
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
