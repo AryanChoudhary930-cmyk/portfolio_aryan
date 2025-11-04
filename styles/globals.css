@@ -92,3 +92,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Utility to hide any images inside elements where we don't want them (used for project cards) */
+.no-image img {
+  display: none !important;
+}
+
+/* Extra catch-all rules to hide project-preview images that may come from other pages or placeholders
+   (these target common placeholder providers and known project alt texts). */
+img[src*="unsplash"],
+img[src*="via.placeholder.com"],
+img[src*="placeholder.svg"],
+img[alt^="Bike"],
+img[alt^="Real-time"],
+img[alt^="Movie"] {
+  display: none !important;
+}

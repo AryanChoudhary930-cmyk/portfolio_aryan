@@ -154,7 +154,6 @@ export default function HomePage() {
       description: "A full-stack bike rental application with React frontend and Flask API backend",
       longDescription:
         "A comprehensive bike rental platform featuring user authentication, bike booking system, payment integration, and admin dashboard. The frontend is built with React and deployed on Vercel, while the Flask API backend is deployed on Render. Features include real-time booking, user management, and responsive design.",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop&crop=center",
       technologies: ["React", "Flask", "JavaScript", "CSS", "HTML"],
       github: "https://github.com/AryanChoudhary930-cmyk/bike_frontend",
       demo: "https://bikefrontend-rosy.vercel.app/",
@@ -166,7 +165,6 @@ export default function HomePage() {
       description: "AI-powered object detection system using YOLOv8 and OpenCV",
       longDescription:
         "A real-time object detection application built with Python, OpenCV, and YOLOv8, deployed using Streamlit. This app detects and tracks multiple objects directly from a live webcam feed, displaying bounding boxes, class labels, and confidence scores in real-time. Features interactive UI and high-performance detection capabilities.",
-      image: "https://via.placeholder.com/400x300/667eea/ffffff?text=AI+Object+Detection",
       technologies: ["Python", "OpenCV", "YOLOv8", "Streamlit", "Ultralytics"],
       github: "https://github.com/AryanChoudhary930-cmyk/Real-time-object-detection-app",
       category: "AI/ML",
@@ -177,7 +175,6 @@ export default function HomePage() {
       description: "Intelligent movie recommendation engine using machine learning",
       longDescription:
         "A sophisticated movie recommendation system that suggests personalized movie choices based on user preferences and viewing history. Built with Python and deployed on Streamlit, it uses advanced machine learning algorithms to provide accurate recommendations. Features include similarity-based recommendations and an intuitive user interface.",
-      image: "https://via.placeholder.com/400x300/f093fb/ffffff?text=Movie+Recommendations",
       technologies: ["Python", "Machine Learning", "Streamlit", "Pandas", "NumPy"],
       github: "https://github.com/AryanChoudhary930-cmyk/movies-recommendation_DataScience",
       demo: "https://movies-recommendationdatascience-35bcuxcfzzar4zffdy3p3o.streamlit.app/",
@@ -189,7 +186,6 @@ export default function HomePage() {
       description: "AI-powered medical diagnosis tool for chest X-ray analysis",
       longDescription:
         "A web application powered by AI that identifies pneumonia from chest X-rays based on a deep learning CNN model. Users can upload X-ray images and receive instant predictions (Normal or Pneumonia). Developed with Python and Streamlit, the application presents an easy-to-use interface with real-time feedback. Trained on the Kaggle pneumonia dataset for high accuracy.",
-      image: "https://via.placeholder.com/400x300/4ade80/ffffff?text=Pneumonia+Detection",
       technologies: ["Python", "Deep Learning", "CNN", "Keras", "Streamlit", "Medical AI"],
       github: "https://github.com/AryanChoudhary930-cmyk/Pneumonia-detection-app",
       category: "AI/ML",
@@ -612,14 +608,8 @@ export default function HomePage() {
                 whileHover={{ y: -5 }}
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={project.image || "https://via.placeholder.com/400x300/1f2937/ffffff?text=Project+Image"}
-                    alt={project.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                  />
+                <div className="relative">
+                  <div className="h-48 bg-gray-100 dark:bg-gray-700"></div>
                   <div className="absolute top-4 right-4">
                     <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {project.category}
@@ -693,14 +683,7 @@ export default function HomePage() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
-                  
-                <Image
-                    src={selectedProject.image || "https://via.placeholder.com/600x400/1f2937/ffffff?text=Project+Image"}
-                    alt={selectedProject.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover"
-                  />
+                  <div className="h-64 bg-gray-100 dark:bg-gray-700 rounded-t-xl"></div>
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:scale-110 transition-transform"

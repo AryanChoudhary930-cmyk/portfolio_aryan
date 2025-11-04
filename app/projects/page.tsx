@@ -4,21 +4,30 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Github, ExternalLink, X } from "lucide-react"
-import Image from "next/image"
 
 export default function ProjectsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
-  const projects = [
+  interface Project {
+    id: number;
+    title: string;
+    description: string;
+    longDescription: string;
+    technologies: string[];
+    github: string;
+    demo: string;
+    category: string;
+  }
+
+  const projects: Project[] = [
     {
       id: 1,
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce solution built with React and Node.js",
       longDescription:
         "A comprehensive e-commerce platform featuring user authentication, product management, shopping cart functionality, payment integration, and admin dashboard. Built with modern technologies and best practices.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -30,7 +39,6 @@ export default function ProjectsPage() {
       description: "Machine learning model for image classification using TensorFlow",
       longDescription:
         "An advanced image classification system using deep learning techniques. The model can accurately classify images into multiple categories with high precision and includes a user-friendly web interface.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["Python", "TensorFlow", "Flask", "OpenCV"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -42,7 +50,6 @@ export default function ProjectsPage() {
       description: "Interactive dashboard for data analysis and visualization",
       longDescription:
         "A powerful data visualization tool that transforms complex datasets into interactive charts and graphs. Features real-time data updates, multiple chart types, and export functionality.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["Python", "Pandas", "Matplotlib", "Streamlit"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -54,7 +61,6 @@ export default function ProjectsPage() {
       description: "Collaborative task management application with real-time updates",
       longDescription:
         "A modern task management application that enables teams to collaborate effectively. Features include real-time updates, drag-and-drop functionality, deadline tracking, and team communication tools.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -66,7 +72,6 @@ export default function ProjectsPage() {
       description: "ML model for accurate weather forecasting",
       longDescription:
         "A sophisticated weather prediction system using machine learning algorithms to forecast weather conditions. Incorporates historical data, real-time inputs, and advanced statistical models.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["Python", "Scikit-learn", "NumPy", "API Integration"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -78,7 +83,6 @@ export default function ProjectsPage() {
       description: "Responsive portfolio website with modern animations",
       longDescription:
         "A modern, responsive portfolio website showcasing projects and skills. Features smooth animations, dark mode support, and optimized performance across all devices.",
-      image: "/placeholder.svg?height=300&width=400",
       technologies: ["React", "Framer Motion", "Tailwind CSS", "Next.js"],
       github: "https://github.com",
       demo: "https://demo.com",
@@ -119,15 +123,14 @@ export default function ProjectsPage() {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A showcase of my recent work and personal projects
           </p>
-        </motion.div>
 
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 no-image"
+          >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -136,14 +139,8 @@ export default function ProjectsPage() {
               whileHover={{ y: -10, scale: 1.02 }}
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative overflow-hidden">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                />
+              <div className="relative">
+                <div className="h-48 bg-gray-100 dark:bg-gray-700"></div>
                 <div className="absolute top-4 right-4">
                   <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {project.category}
@@ -216,13 +213,7 @@ export default function ProjectsPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
-              <Image
-                src={selectedProject.image || "/placeholder.svg"}
-                alt={selectedProject.title}
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover"
-              />
+              <div className="h-64 bg-gray-100 dark:bg-gray-700 rounded-t-xl"></div>
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg"
